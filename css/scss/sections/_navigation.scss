@@ -1,0 +1,373 @@
+.nav-container {
+	background-color: #ffffff;
+	position: fixed;
+	z-index: 10001;
+	height: 100%;
+	transition: all .5s ease-out;
+	left: 0;
+	top: 0;
+	transform: translateX(0px);
+	visibility: visible;
+
+	@include breakpoint(medium) {
+		left: 0;
+		transform: translateX(-130px);
+	}
+
+	&.loading {
+		transform: translateX(-240px);
+		visibility: visible;
+	}
+
+	&.minimized {
+		opacity: 1;
+		overflow-y: hidden;
+		transform: translateX(-240px);
+	}
+
+	.nav {
+		position: relative;
+		width: 240px;
+
+		@include breakpoint(medium) {
+			width: 375px;
+		}
+
+		.nav-list {
+			list-style: none;
+			padding: 10px 0px 0 0;
+
+			> li {
+				text-align: right;
+				margin: 0 0 50px 0;
+				font-size: 16px;
+				position: relative;
+				padding: 0;
+				background-color: #ffffff;
+				transition: background-color .5s ease-out;
+
+				@include breakpoint(medium) {
+					padding: 15px 0 15px;
+				}
+
+				a {
+					color: set-color('black');
+					text-decoration: none;
+					height: 38px;
+					display: inline-block;
+					overflow: visible;
+				}
+
+				a:hover, a:visited {
+					text-decoration: none;
+				}
+
+				.nav-list-item-title {
+					padding: 0 0 0 0;
+					font-weight: 300;
+					position: relative;
+					line-height: 38px;
+					vertical-align: middle;
+					display: block;
+					float: right;
+					left: 0;
+					transform: translateX(0px);
+					transition: transform .5s ease-out, opacity 1s ease-out;
+				}
+				.icon-container {
+					display: block;
+					float: right;
+					text-align: center;
+					width: 70px;
+					height: 38px;
+					padding-top: 3px;
+
+					@include breakpoint(medium) {
+						width: 100px;
+					}
+
+					i {
+						font-size: rem-calc(30);
+					}
+				}
+				&.active:not(.home-icon-nav) {
+					.svg {
+						path {
+							fill: set-color('accent-1');
+						}
+						g g rect {
+							fill: set-color('accent-1');
+						}
+					}
+				}
+
+				&.home-icon-nav {
+					a {
+						height: 40px;
+						display: inline-block;
+						position: relative;
+						margin-right: 15px;
+
+						@include breakpoint(medium) {
+							margin-right: 30px;
+						}
+
+						.icon-container {
+							height: 40px;
+							width: 145px;
+							position: relative;
+						}
+
+						.primary-icon {
+							height: 38px;
+							width: 142px;
+							position: absolute;
+							right: 0;
+							top: 0;
+							opacity: 1;
+							transition: opacity 0s ease-out;
+
+							@include breakpoint(medium) {
+								transition: opacity .5s ease-out;
+							}
+						}
+						.alt-icon {
+							height: 38px;
+							width: 38px;
+							position: absolute;
+							right: 0;
+							top: 0;
+							z-index: 100;
+							opacity: 0;
+							transition: opacity 0s ease-out;
+
+							@include breakpoint(medium) {
+								transition: opacity .5s ease-out;
+							}
+						}
+					}
+				}
+
+				.sub-nav {
+					position: absolute;
+					left: 0;
+					transform: translateX(0px);
+					bottom: 0;
+					list-style: none;
+					background-color: #f5f5f5;
+					opacity: 0;
+					visibility: hidden;
+					transition: all .5s ease-out;
+					width: 165px;
+					padding-right: 20px;
+					padding-left: 10px;
+
+					@include breakpoint(medium) {
+						width: 275px;
+						padding: 0 50px 0 0;
+					}
+
+					> li {
+						margin: 20px 0 20px 0;
+
+						@include breakpoint(medium) {
+							margin: 30px 0 30px 0;
+						}
+
+						a {
+							font-size: 16px;
+							font-weight: 300;
+							color: set-color('black');
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+
+		.nav-footer {
+			padding: 0 18px 30px 0;
+			text-align: right;
+			position: relative;
+			left: 0;
+			transform: translateX(0px);
+			transition: all .5s ease-out;
+
+			@include breakpoint(medium) {
+				padding: 0 30px 30px 0;
+			}
+
+			.fa-linkedin-square {
+				font-size: 24px;
+				color: set-color('black');
+				margin-bottom: 5px;
+			}
+
+			.copyright {
+				font-style: italic;
+				font-size: 11px;
+				margin-bottom: 5px;
+			}
+			.links {
+				font-size: 11px;
+
+				a {
+					text-decoration: underline;
+					color: set-color('black');
+					margin: 0 5px;
+				}
+				a:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	/* Animations */
+	&.show-sub-nav {
+		transform: translateX(0px);
+
+		.nav {
+			.nav-list {
+				> li {
+					.nav-list-item-title {
+						opacity: 0;
+						visibility: hidden;
+						transition: all .5s ease-out;
+					}
+					.svg {
+						opacity: .25;
+						transition: all .5s ease-out;
+					}
+
+					.sub-nav {
+						opacity: 1;
+						visibility: visible;
+						transition: all .5s ease-out .5s;
+					}
+					&.active-sub-nav {
+						background-color: #f5f5f5;
+						transition: all .5s ease-out;
+
+						.svg {
+							opacity: 1;
+						}
+					}
+					&.home-icon-nav {
+						.primary-icon {
+							opacity: 1;
+						}
+						.alt-icon {
+							opacity: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.hide-sub-nav {
+		.nav {
+			.nav-list {
+				> li {
+					.nav-list-item-title {
+						transition: all .5s ease-out .5s;
+					}
+					.svg {
+						transition: all .5s ease-out;
+					}
+
+					.sub-nav {
+						transition: all .5s ease-out;
+					}
+				}
+			}
+		}
+	}
+
+	&.minimized {
+		transform: translateX(-275px);
+
+		.nav {
+			.nav-list {
+				> li {
+					.nav-list-item-title {
+						transform: translateX(-50px);
+						opacity: 0;
+						transition: transform .5s ease-out, opacity .25s ease-out;
+					}
+					&.home-icon-nav {
+						.primary-icon {
+							opacity: 0;
+							transition: opacity .5s ease-out;
+						}
+						.alt-icon {
+							opacity: 1;
+							transition: opacity .5s ease-out;
+						}
+					}
+				}
+			}
+		}
+
+		.nav-footer {
+			transform: translateX(-50px);
+			opacity: 0;
+		}
+	}
+	&.loading {
+		transform: translateX(-375px);
+		visibility: hidden;
+		transition: none;
+	}
+}
+
+.mobile-nav-close {
+	display: block;
+	position: absolute;
+	top: 10px;
+	left: 15px;
+	color: #000000;
+	z-index: 1;
+
+	a {
+		font-size: 24px;
+		color: set-color('accent-1');
+		text-decoration: none;
+		font-weight: 300;
+	}
+
+
+	@include breakpoint(medium) {
+		display: none;
+	}
+}
+
+.mobile-nav-icon {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10000;
+	background-color: #ffffff;
+	opacity: 1;
+	transition: opacity 1s ease-out;
+
+	.alt-icon {
+		height: 38px;
+		width: 38px;
+		padding: 10px;
+		box-sizing: content-box;
+		opacity: 1;
+		transition: opacity .5s ease-out;
+	}
+
+
+	@include breakpoint(medium) {
+		display: none;
+	}
+
+	a {
+		text-decoration: none;
+	}
+}

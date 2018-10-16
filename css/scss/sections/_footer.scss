@@ -1,0 +1,24 @@
+.page-bottom{
+	position: fixed;
+	z-index: 10001;
+	bottom: 0;
+	width: 100%;
+
+	.row {
+		padding: 0;
+		max-width: 100vw;
+	}
+
+	.color-bar{
+		height: 4px;
+	}
+	.color-1{
+		background-color: set-color('black');
+	}
+	.color-2{
+		background-color: set-color('accent-1')
+	}
+	.color-3{
+		background-color: set-color('accent-2');
+	}
+}

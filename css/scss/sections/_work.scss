@@ -1,0 +1,10 @@
+.work {
+	background-color: set-color('white');
+
+	@include breakpoint(large) {
+		min-height: 600px;
+	}
+	.work-inner {
+		justify-content: space-between;
+	}
+}

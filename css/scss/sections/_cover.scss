@@ -1,0 +1,30 @@
+.home {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	width: 100%;
+	height: 100vh;
+	min-height: 550px;
+
+	.section-overlay {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 1;
+		background: #000;
+		opacity: 0.3;
+	}
+
+	.home-container {
+		background: set-color('grey-900') url('#{$img-path}/cover-bg.png') no-repeat fixed center 30%;
+		background-size: cover;
+		width: 100%;
+		height: 100vh;
+		color: set-color('white');
+
+		.row {
+			height: 100%;
+			align-content: space-between;
+		}
+	}
+}

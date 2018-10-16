@@ -4,7 +4,8 @@
 	"description": "Website for Seed - Smart Garden Monitoring System",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"gulp": "gulp"
 	},
 	"repository": {
 		"type": "git",
@@ -18,9 +19,12 @@
 	"homepage": "https://github.com/bjulliana/Seed_Website#readme",
 	"devDependencies": {
 		"browser-sync": "^2.26.3",
+		"gulp": "^3.9.1",
 		"gulp-autoprefixer": "^6.0.0",
 		"gulp-sass": "^4.0.1",
-		"gulp-sass-lint": "^1.4.0",
-		"gulp": "^4.0.0"
+		"gulp-sass-lint": "^1.4.0"
+	},
+	"dependencies": {
+		"npm": "^6.4.1"
 	}
 }
