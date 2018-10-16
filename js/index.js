@@ -4,9 +4,11 @@
 	let body            = document.querySelector('body'),
 	    menuOpen        = document.querySelector('.nav-container'),
 	    mobileTrigger   = document.querySelector('.mobile-nav-icon'),
-	    mobileMenuClose = document.querySelector('.header-nav-close'),
+	    mobileMenuClose = document.querySelector('.mobile-nav-close'),
 	    inputArea       = document.querySelectorAll('.input-field'),
 	    menuItem        = document.querySelectorAll('.menu-link'),
+	    cover           = document.querySelectorAll('.home'),
+	    overlay         = document.querySelector('.section-overlay'),
 	    btButton        = document.querySelector('.back-top'),
 	    animatedObject  = document.querySelectorAll('.js-animation'),
 	    windowHeight    = window.innerHeight;
@@ -26,12 +28,12 @@
 
 	menuItem.forEach(el => {
 		el.addEventListener('click', function () {
-			body.classList.toggle('menu-is-open');
+			body.classList.toggle('minimized');
 		});
 	});
 
 	mobileMenuClose.addEventListener('click', function () {
-		body.classList.toggle('menu-is-open');
+		body.classList.toggle('minimized');
 	});
 
 //Check for not-empty Field for Floating Label
@@ -55,15 +57,16 @@
 		});
 	});
 
-// Show or hide the Back to Top Button
+	// Darken Cover Background on Scroll
 	window.addEventListener('scroll', function () {
-		let offset    = 500,
-		    scrollpos = window.scrollY;
+		let scrollPos = window.scrollY,
+		    height    = overlay.clientHeight;
 
-		if (scrollpos > offset) {
-			btButton.classList.add('visible');
-		} else {
-			btButton.classList.remove('visible');
+		overlay.classList.remove('hidden');
+		overlay.style.opacity = 0.7 - (height - scrollPos) / height;
+
+		if (scrollPos < 200) {
+			overlay.classList.add('hidden');
 		}
 	});
 
