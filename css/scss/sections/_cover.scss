@@ -1,0 +1,94 @@
+.home {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    min-height: 550px;
+
+    .section-overlay {
+        position: absolute;
+        opacity: 0;
+        z-index: 1;
+        background: set-color('black');
+        width: 100%;
+        height: 100%;
+    }
+
+    .home-container {
+        background: set-color('grey-900') url('#{$img-path}/cover.jpg') no-repeat fixed center;
+        background-size: cover;
+        padding: rem-calc(40 0);
+        width: 100%;
+        height: 100vh;
+        color: set-color('white');
+
+        .row {
+            align-content: space-between;
+            height: 100%;
+
+            @include breakpoint(large) {
+                padding: rem-calc(0 30 0 80);
+            }
+        }
+
+        .cover-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            .logo {
+                min-width: 120px;
+
+                img {
+                    max-width: 120px;
+                }
+            }
+
+            .cover-title {
+                text-transform: uppercase;
+                letter-spacing: 8px;
+
+                @include breakpoint(medium) {
+                    margin-top: rem-calc(-180);
+                }
+
+                h1 {
+                    color: set-color('grey-500');
+                    font-family: $secondary-font;
+                    font-size: 1.5rem;
+                    font-weight: 300;
+                }
+            }
+
+            .scrolldown i {
+                color: set-color('accent-1');
+            }
+        }
+    }
+}
+
+.arrow-down i {
+    animation: scrollDown 2s infinite;
+    color: set-color('white');
+    font-size: rem-calc(30);
+}
+
+@keyframes scrollDown {
+    0%,
+    20%,
+    50%,
+    80%,
+    to {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(rem-calc(-6));
+    }
+
+    60% {
+        transform: translateY(rem-calc(-2.5));
+    }
+}

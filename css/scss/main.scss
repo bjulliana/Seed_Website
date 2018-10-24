@@ -1,0 +1,19 @@
+//Basic
+@import 'base/functions.scss';
+@import 'base/global.scss';
+@import 'base/layout.scss';
+@import 'base/typography.scss';
+@import 'base/variables.scss';
+
+//Sections
+@import 'sections/navigation.scss';
+@import 'sections/cover.scss';
+@import 'sections/features.scss';
+@import 'sections/contact.scss';
+@import 'sections/footer.scss';
+
+//Components
+@import 'components/button.scss';
+@import 'components/animation.scss';
+@import 'components/sections.scss';
+@import 'components/cto.scss';
