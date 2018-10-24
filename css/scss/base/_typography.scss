@@ -10,12 +10,18 @@ h6,
 .h4,
 .h5,
 .h6 {
-    margin-bottom: rem-calc(21);
+    margin-top: rem-calc(5);
+    margin-bottom: rem-calc(32);
     text-rendering: optimizeLegibility;
     color: set-color('grey-700');
     font-family: $primary-font;
     font-weight: 500;
     font-style: normal;
+}
+
+h2,
+.h2 {
+    text-transform: uppercase;
 }
 
 h3,
@@ -42,26 +48,30 @@ h1,
     h1,
     .h1 {
         line-height: 1.35;
-        font-size: rem-calc(31);
+        font-size: rem-calc(32);
     }
 }
 
 h2,
 .h2 {
     line-height: 1.25;
-    font-size: rem-calc(24);
+    font-size: rem-calc(28);
+    font-weight: 700;
 }
 
 h3,
 .h3 {
+    text-transform: uppercase;
     line-height: 1.5;
-    font-size: rem-calc(20);
+    font-size: rem-calc(24);
 }
 
 h4,
 .h4 {
+    text-transform: uppercase;
     line-height: 1.76;
-    font-size: rem-calc(17);
+    font-family: $secondary-font;
+    font-size: rem-calc(20);
 }
 
 h5,
@@ -69,7 +79,8 @@ h5,
     text-transform: uppercase;
     line-height: 1.7;
     letter-spacing: rem-calc(2);
-    font-size: rem-calc(14);
+    font-family: $secondary-font;
+    font-size: rem-calc(18);
 }
 
 h6,
@@ -77,11 +88,22 @@ h6,
     text-transform: uppercase;
     line-height: 1.85;
     letter-spacing: rem-calc(2);
-    font-size: rem-calc(13);
+    font-family: $secondary-font;
+    font-size: rem-calc(16);
 }
 
 p img {
     margin: 0;
+}
+
+p {
+    font-family: $secondary-font;
+    font-size: rem-calc(14);
+    font-weight: 300;
+
+    @include breakpoint(medium) {
+        font-size: rem-calc(16);
+    }
 }
 
 p.lead {
@@ -132,4 +154,13 @@ a {
     &:hover {
         color: set-color('accent-1');
     }
+}
+
+.sub-heading {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: set-color('grey-500');
+    font-family: $secondary-font;
+    font-weight: 500;
 }

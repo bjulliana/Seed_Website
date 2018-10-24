@@ -88,16 +88,10 @@ $spacing-map: (
     margin: 0 auto;
     padding: rem-calc(0 30);
     width: 100%;
-	height: 100%;
-    max-width: rem-calc(1200);
+    max-width: rem-calc(1400);
 
-	@include breakpoint(medium) {
-		padding: rem-calc(0 30 0 130);
-	}
-
-    &.row-reverse {
-        flex-direction: column;
-        align-items: center;
+    @include breakpoint(large) {
+        padding: rem-calc(0 30 0 130);
     }
 }
 
@@ -105,10 +99,26 @@ $spacing-map: (
     display: none;
 
     @include breakpoint(medium) {
-        display: inherit;
+        display: flex;
     }
 }
 
-div[class*="column-"] > .row {
-	padding: rem-calc(0 30);
+.hide-for-large {
+    display: block;
+
+    @include breakpoint(large) {
+        display: none;
+    }
+}
+
+.hide-for-xlarge {
+    display: block;
+
+    @include breakpoint(xlarge) {
+        display: none;
+    }
+}
+
+div[class*='column-'] > .row {
+    padding: rem-calc(0 30);
 }

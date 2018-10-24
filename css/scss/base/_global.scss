@@ -8,7 +8,7 @@
 
 html,
 body {
-	height: 100%;
+    height: 100%;
 }
 
 html {
@@ -18,7 +18,7 @@ html {
 
 body {
     margin: 0;
-    background-color: set-color('off-white');
+    //background-color: set-color('off-white');
     padding: 0;
     text-rendering: optimizeLegibility;
     line-height: rem-calc(30);
@@ -74,6 +74,22 @@ img {
 
 .no-padding-bottom {
     padding-bottom: 0;
+}
+
+.flex-a-center {
+    align-items: center;
+}
+
+.flex-j-center {
+    justify-content: center;
+}
+
+.bg-white {
+    background-color: set-color('white') !important;
+}
+
+.bg-alt {
+    background-color: set-color('off-white');
 }
 
 hr {

@@ -7,9 +7,7 @@
 	    mobileMenuClose = document.querySelector('.mobile-nav-close'),
 	    inputArea       = document.querySelectorAll('.input-field'),
 	    menuItem        = document.querySelectorAll('.menu-link'),
-	    cover           = document.querySelectorAll('.home'),
 	    overlay         = document.querySelector('.section-overlay'),
-	    btButton        = document.querySelector('.back-top'),
 	    animatedObject  = document.querySelectorAll('.js-animation'),
 	    windowHeight    = window.innerHeight;
 

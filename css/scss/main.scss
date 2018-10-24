@@ -8,12 +8,12 @@
 //Sections
 @import 'sections/navigation.scss';
 @import 'sections/cover.scss';
-@import 'sections/about.scss';
-@import 'sections/work.scss';
-@import 'sections/app.scss';
+@import 'sections/features.scss';
 @import 'sections/contact.scss';
 @import 'sections/footer.scss';
 
 //Components
 @import 'components/button.scss';
 @import 'components/animation.scss';
+@import 'components/sections.scss';
+@import 'components/cto.scss';

@@ -1,373 +1,259 @@
 .nav-container {
-	background-color: #ffffff;
-	position: fixed;
-	z-index: 10001;
-	height: 100%;
-	transition: all .5s ease-out;
-	left: 0;
-	top: 0;
-	transform: translateX(0px);
-	visibility: visible;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    transition: 0.5s ease-out;
+    visibility: visible;
+    z-index: 10001;
+    background-color: set-color('white');
+    height: 100%;
 
-	@include breakpoint(medium) {
-		left: 0;
-		transform: translateX(-130px);
-	}
+    @include breakpoint(medium) {
+        left: 0;
+        transform: translateX(-130px);
+    }
 
-	&.loading {
-		transform: translateX(-240px);
-		visibility: visible;
-	}
+    .nav {
+        position: relative;
+        padding: rem-calc(0 30);
+        width: 100vw;
 
-	&.minimized {
-		opacity: 1;
-		overflow-y: hidden;
-		transform: translateX(-240px);
-	}
+        @include breakpoint(medium) {
+            padding: 0;
+            width: 375px;
+        }
 
-	.nav {
-		position: relative;
-		width: 240px;
+        .nav-list {
+            padding: rem-calc(10 0 0 0);
+            list-style: none;
 
-		@include breakpoint(medium) {
-			width: 375px;
-		}
+            > .menu-icon {
+                position: relative;
+                transition: 0.5s ease-out;
+                margin: rem-calc(0 0 20 0);
+                background-color: set-color('white');
+                padding: 0;
+                text-align: right;
+                font-size: rem-calc(16);
 
-		.nav-list {
-			list-style: none;
-			padding: 10px 0px 0 0;
+                @include breakpoint(medium) {
+                    margin: rem-calc(0 0 30 0);
+                    padding: rem-calc(15 0 15);
+                }
 
-			> li {
-				text-align: right;
-				margin: 0 0 50px 0;
-				font-size: 16px;
-				position: relative;
-				padding: 0;
-				background-color: #ffffff;
-				transition: background-color .5s ease-out;
+                a {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    align-items: center;
+                    justify-content: flex-start;
+                    transition: 0.3s ease-out;
+                    height: 38px;
+                    text-decoration: none;
+                    color: set-color('black');
 
-				@include breakpoint(medium) {
-					padding: 15px 0 15px;
-				}
+                    &:hover,
+                    &:focus {
+                        text-decoration: none;
+                        color: set-color('accent-1');
 
-				a {
-					color: set-color('black');
-					text-decoration: none;
-					height: 38px;
-					display: inline-block;
-					overflow: visible;
-				}
+                        p {
+                            font-weight: 500;
+                        }
+                    }
+                }
 
-				a:hover, a:visited {
-					text-decoration: none;
-				}
+                .nav-list-item-title {
+                    display: block;
+                    position: relative;
+                    left: 0;
+                    float: right;
+                    transform: translateX(0);
+                    transition: transform 0.5s ease-out, opacity 1s ease-out;
+                    margin: 0;
+                    padding: 0 0 0 0;
+                    line-height: rem-calc(38);
+                    font-size: rem-calc(18);
+                    font-weight: 300;
+                }
 
-				.nav-list-item-title {
-					padding: 0 0 0 0;
-					font-weight: 300;
-					position: relative;
-					line-height: 38px;
-					vertical-align: middle;
-					display: block;
-					float: right;
-					left: 0;
-					transform: translateX(0px);
-					transition: transform .5s ease-out, opacity 1s ease-out;
-				}
-				.icon-container {
-					display: block;
-					float: right;
-					text-align: center;
-					width: 70px;
-					height: 38px;
-					padding-top: 3px;
+                .icon-container {
+                    padding-top: rem-calc(3);
+                    width: 70px;
+                    height: 38px;
+                    text-align: center;
 
-					@include breakpoint(medium) {
-						width: 100px;
-					}
+                    @include breakpoint(medium) {
+                        width: 100px;
+                    }
 
-					i {
-						font-size: rem-calc(30);
-					}
-				}
-				&.active:not(.home-icon-nav) {
-					.svg {
-						path {
-							fill: set-color('accent-1');
-						}
-						g g rect {
-							fill: set-color('accent-1');
-						}
-					}
-				}
+                    span {
+                        font-size: rem-calc(30);
+                    }
+                }
 
-				&.home-icon-nav {
-					a {
-						height: 40px;
-						display: inline-block;
-						position: relative;
-						margin-right: 15px;
+                &.home-icon-nav {
+                    margin-bottom: rem-calc(50);
 
-						@include breakpoint(medium) {
-							margin-right: 30px;
-						}
+                    a {
+                        display: inline-block;
+                        position: relative;
+                        margin-right: rem-calc(15);
+                        height: 40px;
 
-						.icon-container {
-							height: 40px;
-							width: 145px;
-							position: relative;
-						}
+                        @include breakpoint(medium) {
+                            margin-right: rem-calc(30);
+                        }
 
-						.primary-icon {
-							height: 38px;
-							width: 142px;
-							position: absolute;
-							right: 0;
-							top: 0;
-							opacity: 1;
-							transition: opacity 0s ease-out;
+                        .icon-container {
+                            position: relative;
+                            width: 145px;
+                            height: 40px;
+                        }
 
-							@include breakpoint(medium) {
-								transition: opacity .5s ease-out;
-							}
-						}
-						.alt-icon {
-							height: 38px;
-							width: 38px;
-							position: absolute;
-							right: 0;
-							top: 0;
-							z-index: 100;
-							opacity: 0;
-							transition: opacity 0s ease-out;
+                        .primary-icon {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            transition: opacity 0s ease-out;
+                            opacity: 1;
+                            width: 142px;
+                            height: 38px;
 
-							@include breakpoint(medium) {
-								transition: opacity .5s ease-out;
-							}
-						}
-					}
-				}
+                            @include breakpoint(medium) {
+                                transition: opacity 0.5s ease-out;
+                            }
+                        }
 
-				.sub-nav {
-					position: absolute;
-					left: 0;
-					transform: translateX(0px);
-					bottom: 0;
-					list-style: none;
-					background-color: #f5f5f5;
-					opacity: 0;
-					visibility: hidden;
-					transition: all .5s ease-out;
-					width: 165px;
-					padding-right: 20px;
-					padding-left: 10px;
+                        .alt-icon {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            transition: opacity 0s ease-out;
+                            opacity: 0;
+                            z-index: 100;
+                            width: 38px;
+                            height: 38px;
 
-					@include breakpoint(medium) {
-						width: 275px;
-						padding: 0 50px 0 0;
-					}
+                            @include breakpoint(medium) {
+                                transition: opacity 0.5s ease-out;
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
-					> li {
-						margin: 20px 0 20px 0;
+        .nav-footer {
+            position: relative;
+            left: 0;
+            transform: translateX(0);
+            transition: 0.5s ease-out;
+            padding: rem-calc(0 18 0 0);
+            text-align: right;
 
-						@include breakpoint(medium) {
-							margin: 30px 0 30px 0;
-						}
+            @include breakpoint(medium) {
+                padding: rem-calc(0 30 30 0);
+            }
 
-						a {
-							font-size: 16px;
-							font-weight: 300;
-							color: set-color('black');
-							text-decoration: none;
-						}
-					}
-				}
-			}
-		}
+            .copyright {
+                margin-bottom: rem-calc(5);
+                color: set-color('grey-700');
+                font-size: rem-calc(11);
+                font-style: italic;
+            }
+        }
+    }
 
-		.nav-footer {
-			padding: 0 18px 30px 0;
-			text-align: right;
-			position: relative;
-			left: 0;
-			transform: translateX(0px);
-			transition: all .5s ease-out;
+    &.minimized {
+        transform: translateX(-100vw);
+        opacity: 1;
+        overflow-y: hidden;
 
-			@include breakpoint(medium) {
-				padding: 0 30px 30px 0;
-			}
+        @include breakpoint(large) {
+            transform: translateX(-275px);
+        }
 
-			.fa-linkedin-square {
-				font-size: 24px;
-				color: set-color('black');
-				margin-bottom: 5px;
-			}
+        .nav {
+            .nav-list {
+                > li {
+                    .nav-list-item-title {
+                        transform: translateX(-50px);
+                        transition: transform 0.5s ease-out, opacity 0.25s ease-out;
+                        opacity: 0;
+                    }
 
-			.copyright {
-				font-style: italic;
-				font-size: 11px;
-				margin-bottom: 5px;
-			}
-			.links {
-				font-size: 11px;
+                    &.home-icon-nav {
+                        .primary-icon {
+                            transition: opacity 0.5s ease-out;
+                            opacity: 0;
 
-				a {
-					text-decoration: underline;
-					color: set-color('black');
-					margin: 0 5px;
-				}
-				a:hover {
-					text-decoration: none;
-				}
-			}
-		}
-	}
+                        }
 
-	/* Animations */
-	&.show-sub-nav {
-		transform: translateX(0px);
+                        .alt-icon {
+                            transition: opacity 0.5s ease-out;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
 
-		.nav {
-			.nav-list {
-				> li {
-					.nav-list-item-title {
-						opacity: 0;
-						visibility: hidden;
-						transition: all .5s ease-out;
-					}
-					.svg {
-						opacity: .25;
-						transition: all .5s ease-out;
-					}
-
-					.sub-nav {
-						opacity: 1;
-						visibility: visible;
-						transition: all .5s ease-out .5s;
-					}
-					&.active-sub-nav {
-						background-color: #f5f5f5;
-						transition: all .5s ease-out;
-
-						.svg {
-							opacity: 1;
-						}
-					}
-					&.home-icon-nav {
-						.primary-icon {
-							opacity: 1;
-						}
-						.alt-icon {
-							opacity: 0;
-						}
-					}
-				}
-			}
-		}
-	}
-
-	&.hide-sub-nav {
-		.nav {
-			.nav-list {
-				> li {
-					.nav-list-item-title {
-						transition: all .5s ease-out .5s;
-					}
-					.svg {
-						transition: all .5s ease-out;
-					}
-
-					.sub-nav {
-						transition: all .5s ease-out;
-					}
-				}
-			}
-		}
-	}
-
-	&.minimized {
-		transform: translateX(-275px);
-
-		.nav {
-			.nav-list {
-				> li {
-					.nav-list-item-title {
-						transform: translateX(-50px);
-						opacity: 0;
-						transition: transform .5s ease-out, opacity .25s ease-out;
-					}
-					&.home-icon-nav {
-						.primary-icon {
-							opacity: 0;
-							transition: opacity .5s ease-out;
-						}
-						.alt-icon {
-							opacity: 1;
-							transition: opacity .5s ease-out;
-						}
-					}
-				}
-			}
-		}
-
-		.nav-footer {
-			transform: translateX(-50px);
-			opacity: 0;
-		}
-	}
-	&.loading {
-		transform: translateX(-375px);
-		visibility: hidden;
-		transition: none;
-	}
+        .nav-footer {
+            transform: translateX(-50px);
+            opacity: 0;
+        }
+    }
 }
 
 .mobile-nav-close {
-	display: block;
-	position: absolute;
-	top: 10px;
-	left: 15px;
-	color: #000000;
-	z-index: 1;
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    z-index: 1;
 
-	a {
-		font-size: 24px;
-		color: set-color('accent-1');
-		text-decoration: none;
-		font-weight: 300;
-	}
+    a {
+        text-decoration: none;
+        color: set-color('accent-1');
+        font-size: rem-calc(30);
+        font-weight: 700;
+    }
 
-
-	@include breakpoint(medium) {
-		display: none;
-	}
+    @include breakpoint(large) {
+        display: none;
+    }
 }
 
 .mobile-nav-icon {
-	display: block;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 10000;
-	background-color: #ffffff;
-	opacity: 1;
-	transition: opacity 1s ease-out;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease-out;
+    opacity: 1;
+    z-index: 10000;
+    background-color: set-color('accent-1');
 
-	.alt-icon {
-		height: 38px;
-		width: 38px;
-		padding: 10px;
-		box-sizing: content-box;
-		opacity: 1;
-		transition: opacity .5s ease-out;
-	}
+    .alt-icon {
+        transition: opacity 0.5s ease-out;
+        opacity: 1;
+        padding: rem-calc(14 10 10 10);
+        width: 38px;
+        height: 35px;
+        text-align: center;
 
+        span {
+            color: set-color('white');
+            font-size: rem-calc(30);
+        }
+    }
 
-	@include breakpoint(medium) {
-		display: none;
-	}
+    @include breakpoint(large) {
+        display: none;
+    }
 
-	a {
-		text-decoration: none;
-	}
+    a {
+        text-decoration: none;
+    }
 }

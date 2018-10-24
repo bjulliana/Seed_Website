@@ -2,233 +2,320 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Seed Garden Monitoring System</title>
 
 <!--CSS-->
 <link rel="stylesheet" href="css/main.css">
-<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700%7CMontserrat:200,300,400,500,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i%7CPlayfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 
 <!--Favicon-->
-<!--<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>-->
+<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 
 </head>
 <body>
 
 <div class="nav-container minimized">
-	<div class="nav">
-		<div class="mobile-nav-close">
-			<a href="#"> X </a>
-		</div>
-
-		<ul class="nav-list">
-			<li class="home-icon-nav">
-				<a href="#" data-prefetch="/">
-					<span class="icon-container">
-						<div class="primary-icon"><i class="fas fa-leaf"></i></div>
-						<div class="alt-icon svg"><i class="fas fa-leaf"></i></div>
-					</span>
-				</a>
-			</li>
-			<li class="menu-icon">
-				<a href="#">
-					<span class="icon-container">
-						<i class="fas fa-home"></i>
-					</span>
-					<span class="nav-list-item-title">Home</span>
-				</a>
-			</li>
-			<li class="menu-icon">
-				<a href="#">
-					<span class="icon-container">
-						<i class="fas fa-info"></i>
-					</span>
-					<span class="nav-list-item-title">About</span>
-				</a>
-			</li>
-			<li class="menu-icon">
-				<a href="#">
-					<span class="icon-container">
-						<i class="fas fa-question"></i>
-					</span>
-					<span class="nav-list-item-title">How it Works</span>
-				</a>
-			</li>
-			<li class="menu-icon">
-				<a href="#">
-					<span class="icon-container">
-						<i class="fas fa-envelope"></i>
-					</span>
-					<span class="nav-list-item-title">Contact</span>
-				</a>
-			</li>
-		</ul>
-		<div class="nav-footer">
-			<div class="text-right">
-				<a href="#" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-			</div>
-
-			<div class="copyright">
-				Copyright 2018. All Rights Reserved.
-			</div>
-			<div class="links">
-				<a href="#">Lorem</a> |
-				<a href="#">Ipsum</a>
-			</div>
-		</div>
-	</div>
+    <div class="nav">
+        <h1 class="hidden">Main Navigation</h1>
+        <ul class="nav-list margin-b-xl">
+            <li class="home-icon-nav menu-icon">
+                <a href="#home" data-prefetch="/">
+                    <div class="icon-container">
+                        <div class="primary-icon"><img src="images/Logo-Horizontal.svg" alt="Seed Logo"></div>
+                        <div class="alt-icon"><img src="images/Symbol.svg" alt="Seed Logo"></div>
+                    </div>
+                </a>
+            </li>
+            <li class="menu-icon">
+                <a href="#home">
+                    <div class="icon-container">
+                        <span class="lnr lnr-home"></span>
+                    </div>
+                    <p class="nav-list-item-title">Home</p>
+                </a>
+            </li>
+            <li class="menu-icon">
+                <a href="#about">
+                    <div class="icon-container">
+                        <span class="lnr lnr-users"></span>
+                    </div>
+                    <p class="nav-list-item-title">About</p>
+                </a>
+            </li>
+            <li class="menu-icon">
+                <a href="#work">
+                    <div class="icon-container">
+                        <span class="lnr lnr-cog"></span>
+                    </div>
+                    <p class="nav-list-item-title">How it Works</p>
+                </a>
+            </li>
+            <li class="menu-icon">
+                <a href="#features">
+                    <div class="icon-container">
+                        <span class="lnr lnr-star"></span>
+                    </div>
+                    <p class="nav-list-item-title">Features</p>
+                </a>
+            </li>
+            <li class="menu-icon">
+                <a href="#contact">
+                    <div class="icon-container">
+                        <span class="lnr lnr-envelope"></span>
+                    </div>
+                    <p class="nav-list-item-title">Contact</p>
+                </a>
+            </li>
+        </ul>
+        <div class="nav-footer">
+            <p class="copyright">Seed Copyright 2018. All Rights Reserved.</p>
+        </div>
+        <div class="mobile-nav-close">
+            <a aria-label="Close">X</a>
+        </div>
+    </div>
 </div>
 <div class="mobile-nav-icon">
-	<a href="#">
-		<div class="alt-icon"><i class="fas fa-bars"></i></div>
-	</a>
+    <div class="alt-icon"><span class="lnr lnr-menu"></span></div>
 </div>
 <section class="home" id="home">
-	<div class="section-overlay hidden"></div>
-	<div class="home-container">
-		<div class="row">
-			<div class="column-large-8 column-small-12 align-center">
-				<div class="splash-copy">
-					<div class="logo"><i class="fas fa-leaf"></i></div>
-				</div>
-			</div>
-			<div class="column-large-8 column-small-12 align-center">
-				<div class="section-link-container">
-					<a href="#" class="section-link">
-						<div class="arrow-down"><i class="fas fa-angle-down"></i></div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="section-overlay hidden"></div>
+    <div class="home-container">
+        <div class="row">
+            <div class="column-large-8 column-small-12 align-center cover-content">
+                <div class="logo">
+                    <img src="images/Logo.svg" alt="Seed Logo">
+                </div>
+                <div class="cover-title">
+                    <h2 class="h1">Smart Plant Monitoring System</h2>
+                    <a href="#contact" class="button">Pre-Order Today</a>
+                </div>
+                <div class="column-large-8 column-small-12 align-center">
+                    <div class="section-link-container scrolldown">
+                        <a href="#about" class="section-link">
+                            <div class="arrow-down"><span class="fas fa-angle-down"></span></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section id="about" class="about">
-	<div class="row js-animation">
-		<div class="column-large-11 column-small-12 padding-v-xl">
-			<div class="row about-inner">
-				<div class="column-small-12 column-large-6 image-container">
-					<div class="image-wrapper">
-						<img src="https://placeimg.com/480/600/any">
-					</div>
-				</div>
-				<div class="column-small-12 column-large-5">
-					<div class="text-wrapper">
-						<div class="title">TITLE</div>
-						<div class="content">
-							<p><strong>LOREM IPSUM</strong></p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequatur cumque deleniti deserunt illo itaque iusto laboriosam molestias nam necessitatibus numquam omnis provident quaerat quisquam sequi</p>
-							<p><strong>LOREM IPSUM</strong></p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequatur cumque deleniti deserunt illo itaque iusto laboriosam molestias nam necessitatibus numquam omnis provident quaerat quisquam sequi</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="row js-animation">
+        <div class="column-small-12 column-medium-10 column-xlarge-9 padding-v-xl">
+            <div class="row work-inner">
+                <div class="column-small-12 column-large-6">
+                    <div class="text-wrapper">
+                        <p class="sub-heading">What is seed?</p>
+                        <h2>Your personal gardener</h2>
+                        <span class="line"></span>
+                        <div class="image-wrapper show-for-small">
+                            <img src="images/plant1.png" alt="Potted Plant">
+                        </div>
+                        <div class="content">
+                            <p>This innovation will take your worries away by taking care of your plants like never before.</p>
+                            <p>Using modern technology, we have created seed in a manner that it will help you understand your plant needs and know more about gardening everyday.</p>
+                            <p>It is the ultimate plant monitoring system that will nurture and love your plant just the way you do.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hide-for-small column-large-5 image-container alternate">
+                    <div class="image-wrapper">
+                        <img src="images/plant1.png" alt="Potted Plant">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section id="work" class="work">
-	<div class="row js-animation">
-		<div class="column-large-11 column-small-12 padding-v-xl">
-			<div class="row work-inner">
-				<div class="column-small-12 column-large-5">
-					<div class="text-wrapper">
-						<div class="title">TITLE</div>
-						<div class="content">
-							<p><strong>LOREM IPSUM</strong></p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequatur cumque deleniti deserunt illo itaque iusto laboriosam molestias nam necessitatibus numquam omnis provident quaerat quisquam sequi</p>
-							<p><strong>LOREM IPSUM</strong></p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequatur cumque deleniti deserunt illo itaque iusto laboriosam molestias nam necessitatibus numquam omnis provident quaerat quisquam sequi</p>
-						</div>
-					</div>
-				</div>
-				<div class="column-small-12 column-large-6 image-container">
-					<div class="image-wrapper">
-						<img src="https://placeimg.com/480/600/any">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<section id="work" class="work bg-alt">
+    <div class="row js-animation">
+        <div class="column-small-12 column-large-10 column-xlarge-9 padding-v-xl">
+            <div class="row about-inner">
+                <div class="column-small-12 column-large-5 image-container show-for-large">
+                    <div class="image-wrapper">
+                        <img src="images/plant2.png" alt="Potted Plant">
+                    </div>
+                </div>
+                <div class="column-small-12 column-medium-10 column-large-6">
+                    <div class="text-wrapper">
+                        <p class="sub-heading">How it Works?</p>
+                        <h2>Combining Technology and Nature</h2>
+                        <span class="line"></span>
+                        <div class="image-wrapper align-center hide-for-large">
+                            <img src="images/plant2.png" alt="Potted Plant">
+                        </div>
+                        <div class="content">
+                            <p>Seed is that revolutionary device which uses the best of technology to nurture your plants.</p>
+                            <p>It will keep you updated and will give you insight about your plants health and environment in order to take better care of your plants according to its needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section id="app" class="app">
-	<div class="row js-animation">
-		<div class="column-large-11 column-small-12 padding-v-xl">
-			<div class="row app-inner">
-				<div class="column-small-12 column-large-6 image-container">
-					<div class="image-wrapper">
-						<img src="https://placeimg.com/480/600/any">
-					</div>
-				</div>
-				<div class="column-small-12 column-large-5">
-					<div class="text-wrapper">
-						<div class="title">TITLE</div>
-						<div class="content">
-							<p><strong>LOREM IPSUM</strong></p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequatur cumque deleniti deserunt illo itaque iusto laboriosam molestias nam necessitatibus numquam omnis provident quaerat quisquam sequi</p>
-							<p><strong>LOREM IPSUM</strong></p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequatur cumque deleniti deserunt illo itaque iusto laboriosam molestias nam necessitatibus numquam omnis provident quaerat quisquam sequi</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<section id="cto" class="cto">
+    <div class="overlay"></div>
+    <div class="row js-animation flex-a-center">
+        <div class="column-small-12 column-medium-10 column-large-6 padding-v-xl flex-a-center">
+            <h2 class="h4 cto-content">The utmost experience for nurturing plants.</h2>
+            <span class="line hide-for-small bg-white"></span>
+            <a href="#contact" class="button button-alt">Pre Order Today</a>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="features bg-alt">
+    <div class="row js-animation">
+        <div class="column-small-12 column-large-10 column-xlarge-11 padding-v-xl">
+            <div>
+                <p class="sub-heading text-center">Features</p>
+                <h2 class="text-center">Growing Smart</h2>
+                <span class="line-center"></span>
+                <p class="text-center lead">Seed is your own botany lab on the tip of your fingers.</p>
+            </div>
+            <div class="row">
+                <div class="column-small-12 column-medium-6 text-center hide-for-xlarge">
+                    <div class="feature-box js-animation">
+                        <div class="fbox-icon">
+                            <span class="lnr lnr-drop"></span>
+                        </div>
+                        <div>
+                            <h3>Moisture Sensor</h3>
+                            <p>Helps you to understand how much water your plants needs.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box js-animation">
+                        <div class="fbox-icon">
+                            <span class="lnr lnr-sun"></span>
+                        </div>
+                        <div>
+                            <h3>Light Sensor</h3>
+                            <p>Guides your to give proper light to your plants.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column-small-12 column-medium-6 text-center hide-for-xlarge">
+                    <div class="feature-box js-animation">
+                        <div class="fbox-icon">
+                            <span class="lnr lnr-earth"></span>
+                        </div>
+                        <div>
+                            <h3>Mobility</h3>
+                            <p>Access your plants health from anywhere in the world.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box js-animation">
+                        <div class="fbox-icon">
+                            <span class="lnr lnr-checkmark-circle"></span>
+                        </div>
+                        <div>
+                            <h3>Compatibility</h3>
+                            <p>Designed to be suitable for all the devices with Android or iOS.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="align-center js-animation hide-for-xlarge">
+                    <div class="image-wrapper phone"><img src="images/MobileApp.png" alt="Seed Login Screen on iPhone"></div>
+                </div>
+            </div>
+            <div class="row flex-a-center">
+                <div class="column-xlarge-4 column-large-3 show-for-xlarge">
+                    <div class="feature-box fbox-right js-animation">
+                        <div>
+                            <h3>Moisture Sensor</h3>
+                            <p>Helps you to understand how much water your plants needs.</p>
+                        </div>
+                        <div class="fbox-icon">
+                            <span class="lnr lnr-drop"></span>
+                        </div>
+                    </div>
+                    <div class="feature-box fbox-right js-animation">
+                        <div>
+                            <h3>Light Sensor</h3>
+                            <p>Guides your to give proper light to your plants.</p>
+                        </div>
+                        <div class="fbox-icon">
+                            <span class="lnr lnr-sun"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="column-xlarge-4 column-large-3 js-animation show-for-xlarge">
+                    <img src="images/MobileApp.png" alt="Seed Login Screen on iPhone">
+                </div>
+                <div class="column-xlarge-4 column-large-3 show-for-xlarge">
+                    <div class="feature-box js-animation">
+                        <div class="fbox-icon">
+                            <span class="lnr lnr-earth"></span>
+                        </div>
+                        <div>
+                            <h3>Mobility</h3>
+                            <p>Access your plants health from anywhere in the world.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box js-animation">
+                        <div class="fbox-icon">
+                            <span class="lnr lnr-checkmark-circle"></span>
+                        </div>
+                        <div>
+                            <h3>Compatibility</h3>
+                            <p>Designed to be suitable for all the devices with Android or iOS.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section id="contact" class="contact padding-v-xl">
-	<div class="row section-intro js-animation">
-		<div class="column-small-12 column-medium-10 column-large-8">
-			<h2 class="title text-center text-uppercase">Contact</h2>
-		</div>
-	</div>
-	<div class="row">
-		<div class="column-small-12 column-medium-10 column-large-8">
-			<form name="contact-form" id="contact-form" class="contact-form js-animation" method="post">
-				<div class="form-field">
-					<input id="name" class="input-field" type="text" required>
-					<label class="label" for="name">Name*</label>
-				</div>
-				<div class="form-field">
-					<input id="email" class="input-field" type="email" required>
-					<label class="label" for="email">E-mail Address*</label>
-				</div>
-				<div class="form-field">
-					<input id="subject" class="input-field" type="text">
-					<label class="label" for="subject">Subject*</label>
-				</div>
-				<div class="form-field">
-					<textarea id="message" class="input-field message" required></textarea>
-					<label class="label message-label" for="message">Message*</label>
-				</div>
-				<div class="form-field">
-					<button class="large-button">Submit</button>
-				</div>
-			</form>
-		</div>
-	</div>
+    <div class="row section-intro js-animation">
+        <div class="column-small-12 column-medium-10 column-large-6">
+            <h2 class="title text-center text-uppercase">Contact Us</h2>
+            <span class="line-center"></span>
+            <p class="lead text-center">Pre Order seed now and receive a totally revolutionizing experience for nurturing your plants</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column-small-12 column-medium-10 column-large-8">
+            <form name="contact-form" id="contact-form" class="contact-form js-animation" method="post">
+                <div class="form-field">
+                    <input id="name" class="input-field" type="text" required>
+                    <label class="label" for="name">Name*</label>
+                </div>
+                <div class="form-field">
+                    <input id="email" class="input-field" type="email" required>
+                    <label class="label" for="email">E-mail Address*</label>
+                </div>
+                <div class="form-field">
+                    <textarea id="message" class="input-field message" required></textarea>
+                    <label class="label message-label" for="message">Message*</label>
+                </div>
+                <div class="form-field">
+                    <button class="button button-large">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <span class="corner-img"><img src="images/corner.png" alt="Green Leaves"></span>
 </section>
 
-<footer class="footer">
-	<div class="row">
-		<div class="column-small-12">
-			<div class="copyright">
-				<p>&copy; Copyright. Design by XXXX</p>
-			</div>
-		</div>
-	</div>
-</footer>
-
 <div class="page-bottom">
-	<div class="row">
-		<div class="column-small-4 color-bar color-1"></div>
-		<div class="column-small-4 color-bar color-2"></div>
-		<div class="column-small-4 color-bar color-3"></div>
-	</div>
+    <div class="row">
+        <div class="column-small-4 color-bar color-1"></div>
+        <div class="column-small-4 color-bar color-2"></div>
+        <div class="column-small-4 color-bar color-3"></div>
+    </div>
 </div>
 <script src="js/index.js"></script>
 
