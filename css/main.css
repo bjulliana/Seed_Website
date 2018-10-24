@@ -1126,7 +1126,7 @@ a {
         @media screen and (min-width: 600px) {
           .home .home-container .cover-content .cover-title {
             margin-top: -11.25rem; } }
-        .home .home-container .cover-content .cover-title h1 {
+        .home .home-container .cover-content .cover-title h2 {
           color: #7e7e7e;
           font-family: "Lato", Arial, sans-serif;
           font-size: 1.5rem;
