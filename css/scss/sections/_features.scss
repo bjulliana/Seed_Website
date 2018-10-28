@@ -1,0 +1,57 @@
+.features {
+    .row {
+
+        @include breakpoint(xxlarge) {
+            padding: rem-calc(0 30);
+        }
+    }
+}
+
+.feature-box {
+    display: block;
+
+    p {
+        @include breakpoint(medium) {
+            margin: rem-calc(0 14 40 14);
+        }
+
+        @include breakpoint(large) {
+            margin: rem-calc(0 30 40 30);
+        }
+
+        @include breakpoint(xlarge) {
+            margin: rem-calc(20 0 40);
+        }
+    }
+
+    @include breakpoint(xlarge) {
+        display: flex;
+        padding: 0;
+    }
+
+    &.fbox-right {
+        justify-content: flex-end;
+        text-align: right;
+
+        .fbox-icon {
+            margin-right: 0;
+            margin-left: rem-calc(15);
+        }
+    }
+
+    .fbox-icon {
+        display: inline-block;
+        margin-right: 0;
+        border-radius: 100px;
+        background-color: set-color('accent-2');
+        padding: rem-calc(16 19);
+        height: 100%;
+        color: set-color('white');
+        font-size: rem-calc(24);
+
+        @include breakpoint(xlarge) {
+            margin-right: rem-calc(15);
+        }
+    }
+
+}
