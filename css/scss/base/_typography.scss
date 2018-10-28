@@ -19,40 +19,24 @@ h6,
     font-style: normal;
 }
 
-h2,
-.h2 {
-    text-transform: uppercase;
-}
-
-h3,
-.h3,
-h4,
-.h4 {
-    margin-bottom: rem-calc(18);
-}
-
-h5,
-.h5,
-h6,
-.h6 {
-    margin-bottom: rem-calc(12);
-}
-
 h1,
 .h1 {
-    font-size: rem-calc(26);
+    text-transform: uppercase;
+    font-size: rem-calc(30);
+    font-weight: 700;
 }
 
 @include breakpoint(medium) {
     h1,
     .h1 {
         line-height: 1.35;
-        font-size: rem-calc(32);
+        font-size: rem-calc(44);
     }
 }
 
 h2,
 .h2 {
+    text-transform: uppercase;
     line-height: 1.25;
     font-size: rem-calc(28);
     font-weight: 700;
@@ -68,6 +52,7 @@ h2,
 
 h3,
 .h3 {
+    margin-bottom: rem-calc(18);
     text-transform: uppercase;
     line-height: 1.5;
     font-size: rem-calc(35);
@@ -75,6 +60,7 @@ h3,
 
 h4,
 .h4 {
+    margin-bottom: rem-calc(18);
     text-transform: uppercase;
     line-height: 1.76;
     font-size: rem-calc(30);
@@ -82,6 +68,7 @@ h4,
 
 h5,
 .h5 {
+    margin-bottom: rem-calc(12);
     text-transform: uppercase;
     line-height: 1.7;
     font-size: rem-calc(22);
@@ -93,6 +80,7 @@ h5,
 
 h6,
 .h6 {
+    margin-bottom: rem-calc(12);
     text-transform: uppercase;
     line-height: 1.85;
     font-size: rem-calc(20);
@@ -133,13 +121,17 @@ i {
 
 strong,
 b {
-    color: set-color('accent-1');
     font-weight: bold;
 }
 
-em,
 i {
     font-style: italic;
+}
+
+em {
+    color: set-color('accent-1');
+    font-weight: bold;
+    font-style: normal;
 }
 
 strong,
