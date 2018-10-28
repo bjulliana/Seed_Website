@@ -20,8 +20,8 @@
     .row {
         z-index: 2;
 
-        @include breakpoint(large) {
-            padding: rem-calc(0 30 0 80);
+        @include breakpoint(xxlarge) {
+            padding: rem-calc(0 30);
         }
     }
 }

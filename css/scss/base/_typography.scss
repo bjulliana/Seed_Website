@@ -36,7 +36,6 @@ h5,
 h6,
 .h6 {
     margin-bottom: rem-calc(12);
-    letter-spacing: rem-calc(2);
 }
 
 h1,
@@ -57,39 +56,46 @@ h2,
     line-height: 1.25;
     font-size: rem-calc(28);
     font-weight: 700;
+
+    @include breakpoint(large) {
+        font-size: rem-calc(40);
+    }
+
+    span {
+        font-weight: 300;
+    }
 }
 
 h3,
 .h3 {
     text-transform: uppercase;
     line-height: 1.5;
-    font-size: rem-calc(24);
+    font-size: rem-calc(35);
 }
 
 h4,
 .h4 {
     text-transform: uppercase;
     line-height: 1.76;
-    font-family: $secondary-font;
-    font-size: rem-calc(20);
+    font-size: rem-calc(30);
 }
 
 h5,
 .h5 {
     text-transform: uppercase;
     line-height: 1.7;
-    letter-spacing: rem-calc(2);
-    font-family: $secondary-font;
-    font-size: rem-calc(18);
+    font-size: rem-calc(22);
+
+    @include breakpoint(large) {
+        font-size: rem-calc(25);
+    }
 }
 
 h6,
 .h6 {
     text-transform: uppercase;
     line-height: 1.85;
-    letter-spacing: rem-calc(2);
-    font-family: $secondary-font;
-    font-size: rem-calc(16);
+    font-size: rem-calc(20);
 }
 
 p img {
@@ -111,7 +117,7 @@ p.lead {
     line-height: 1.8;
     color: set-color('grey-500');
     font-family: $primary-font;
-    font-size: rem-calc(18);
+    font-size: rem-calc(16);
 }
 
 @include breakpoint(medium) {
@@ -121,13 +127,14 @@ p.lead {
 }
 
 em,
-i,
+i {
+    font-style: italic;
+}
+
 strong,
 b {
-    line-height: 3rem;
-    font-size: rem-calc(16);
-    font-weight: normal;
-    font-style: normal;
+    color: set-color('accent-1');
+    font-weight: bold;
 }
 
 em,
@@ -160,7 +167,7 @@ a {
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: set-color('grey-500');
+    color: set-color('accent-2');
     font-family: $secondary-font;
     font-weight: 500;
 }

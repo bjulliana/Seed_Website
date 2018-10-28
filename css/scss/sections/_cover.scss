@@ -27,8 +27,8 @@
             align-content: space-between;
             height: 100%;
 
-            @include breakpoint(large) {
-                padding: rem-calc(0 30 0 80);
+            @include breakpoint(xxlarge) {
+                padding: rem-calc(0 30);
             }
         }
 
@@ -37,6 +37,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
+            margin: 0;
 
             .logo {
                 min-width: 120px;
@@ -69,10 +70,14 @@
     }
 }
 
-.arrow-down i {
+.arrow-down {
     animation: scrollDown 2s infinite;
-    color: set-color('white');
+    color: set-color('accent-1');
     font-size: rem-calc(30);
+
+    span {
+        font-weight: bold;
+    }
 }
 
 @keyframes scrollDown {
@@ -85,10 +90,10 @@
     }
 
     40% {
-        transform: translateY(rem-calc(-6));
+        transform: translateY(-6px);
     }
 
     60% {
-        transform: translateY(rem-calc(-2.5));
+        transform: translateY(-2.5px);
     }
 }

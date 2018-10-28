@@ -1,8 +1,8 @@
 .features {
     .row {
 
-        @include breakpoint(large) {
-            padding: rem-calc(0 30 0 80);
+        @include breakpoint(xxlarge) {
+            padding: rem-calc(0 30);
         }
     }
 }
@@ -34,6 +34,7 @@
         text-align: right;
 
         .fbox-icon {
+            margin-right: 0;
             margin-left: rem-calc(15);
         }
     }
@@ -42,8 +43,8 @@
         display: inline-block;
         margin-right: 0;
         border-radius: 100px;
-        background-color: set-color('accent-1');
-        padding: rem-calc(16 20);
+        background-color: set-color('accent-2');
+        padding: rem-calc(16 19);
         height: 100%;
         color: set-color('white');
         font-size: rem-calc(24);

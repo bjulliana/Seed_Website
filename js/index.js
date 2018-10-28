@@ -1,5 +1,5 @@
-(function () {
-	'use strict';
+//(function () {
+	//'use strict';
 
 	let body            = document.querySelector('body'),
 	    menuOpen        = document.querySelector('.nav-container'),
@@ -24,36 +24,64 @@
 		menuOpen.classList.toggle('minimized');
 	});
 
-	menuItem.forEach(el => {
-		el.addEventListener('click', function () {
-			body.classList.toggle('minimized');
-		});
-	});
+for (let i = 0; i < menuItem.length; i++) {
+    menuItem[i].addEventListener('click', function () {
+        body.classList.toggle('minimized');
+    });
+}
+
+	//menuItem.forEach(el => {
+	//	el.addEventListener('click', function () {
+	//		body.classList.toggle('minimized');
+	//	});
+	//});
 
 	mobileMenuClose.addEventListener('click', function () {
 		body.classList.toggle('minimized');
 	});
 
 //Check for not-empty Field for Floating Label
-	inputArea.forEach(el => {
-		el.addEventListener('keyup', function () {
-			if (el.value.length > 0) {
-				el.classList.add('not-empty');
-			} else {
-				el.classList.remove('not-empty');
-			}
-		});
-	});
+for (let i = 0; i < inputArea.length; i++) {
+    inputArea[i].addEventListener('keyup', function () {
+        if (inputArea[i].value.length > 0) {
+            inputArea[i].classList.add('not-empty');
+        } else {
+            inputArea[i].classList.remove('not-empty');
+        }
+    });
+}
 
-	inputArea.forEach(el => {
-		el.addEventListener('keyup', function () {
-			if (el.value.length > 0) {
-				el.classList.add('not-empty');
-			} else {
-				el.classList.remove('not-empty');
-			}
-		});
-	});
+
+
+	//inputArea.forEach(el => {
+	//	el.addEventListener('keyup', function () {
+	//		if (el.value.length > 0) {
+	//			el.classList.add('not-empty');
+	//		} else {
+	//			el.classList.remove('not-empty');
+	//		}
+	//	});
+	//});
+
+for (let i = 0; i < inputArea.length; i++) {
+    inputArea[i].addEventListener('keyup', function () {
+        if (inputArea[i].value.length > 0) {
+            inputArea[i].classList.add('not-empty');
+        } else {
+            inputArea[i].classList.remove('not-empty');
+        }
+    });
+}
+
+	//inputArea.forEach(el => {
+	//	el.addEventListener('keyup', function () {
+	//		if (el.value.length > 0) {
+	//			el.classList.add('not-empty');
+	//		} else {
+	//			el.classList.remove('not-empty');
+	//		}
+	//	});
+	//});
 
 	// Darken Cover Background on Scroll
 	window.addEventListener('scroll', function () {
@@ -69,22 +97,32 @@
 	});
 
 //Smoothscroll
-	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-		anchor.addEventListener('click', function (e) {
-			e.preventDefault();
+//	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//		anchor.addEventListener('click', function (e) {
+//			e.preventDefault();
+//
+//			document.querySelector(this.getAttribute('href')).scrollIntoView({
+//				behavior: 'smooth'
+//			});
+//		});
+//	});
 
-			document.querySelector(this.getAttribute('href')).scrollIntoView({
-				behavior: 'smooth'
-			});
-		});
-	});
+    for (let i = 0; i < animatedObject.length; i++) {
+        window.addEventListener('scroll', function () {
+            let posTop = animatedObject[i].getBoundingClientRect().y;
+            if (posTop - windowHeight <= 0) {
+                animatedObject[i].className = animatedObject[i].className.replace('js-animation', 'fade-in');
+            }
+        });
+    }
 
-	animatedObject.forEach(el => {
-		window.addEventListener('scroll', function () {
-			let posTop = el.getBoundingClientRect().top;
-			if (posTop - windowHeight <= 0) {
-				el.className = el.className.replace('js-animation', 'fade-in');
-			}
-		});
-	});
-})();
+
+    //animatedObject.forEach(el => {
+	//	window.addEventListener('scroll', function () {
+	//		let posTop = el.getBoundingClientRect().top;
+	//		if (posTop - windowHeight <= 0) {
+	//			el.className = el.className.replace('js-animation', 'fade-in');
+	//		}
+	//	});
+	//});
+//})();
