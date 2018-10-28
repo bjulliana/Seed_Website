@@ -43,6 +43,11 @@ gulp.task('test', function () {
 	gulp.start('sass-lint');
 });
 
+//Default task
+gulp.task('default', function () {
+    gulp.start('sass');
+});
+
 //Watch task
 gulp.task('watch', ['sass', 'browserSync'], function () {
 	gulp.watch('css/scss/**/*.scss', ['sass']);

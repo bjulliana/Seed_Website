@@ -55,10 +55,10 @@
                     margin-top: rem-calc(-180);
                 }
 
-                h2 {
+                h1 {
                     color: set-color('grey-500');
                     font-family: $secondary-font;
-                    font-size: 1.5rem;
+                    font-size: rem-calc(24);
                     font-weight: 300;
                 }
             }
